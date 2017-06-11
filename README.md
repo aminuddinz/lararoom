@@ -2,7 +2,9 @@
 1. Install laragon web server https://laragon.org/
 2. start web server
 3. run terminal on laragon web server. 
-4. run command on terminal - composer update
-                           - php artisan serve
+4. run command (/larogon/www/)
+- git clone git@github.com:aminuddinz/lararoom.git
+- composer update
+- php artisan serve
 
                
