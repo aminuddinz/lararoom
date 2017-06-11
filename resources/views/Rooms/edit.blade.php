@@ -1,0 +1,50 @@
+@include('layouts.app')
+@include('layouts.dropdown-menu')
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9 col-md-9">
+            <div class="panel panel-default">
+                <div class="panel-heading">Edit Room</div>
+                <div class="panel-body"><br>
+                    <form class="form-horizontal" role="form" method="POST" action="{{ action('RoomsController@update',$edit->id) }}">
+                        {{ csrf_field() }}
+
+                        <div class="form-group">
+                            <label for="name" class="col-md-4 control-label">Room No</label>
+
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" name="room_no" value="{{ $edit->room_no }}" placeholder="Room No" required autofocus>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="price_per_day" class="col-md-4 control-label">Price Per Day</label>
+
+                            <div class="col-md-6">
+                                <input type="number" class="form-control" name="price_per_day" value="{{ $edit->price_per_day }}" placeholder="RM" required autofocus>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="status" class="col-md-4 control-label">Status</label>
+
+                            <div class="col-md-6">
+                                {{ Form::select('status_id',$status,$edit->status_id, ['class'=>'form-control','required'=>'required']) }}
+                            </div>
+                        </div>
+                        <br>
+
+                        <div class="form-group">
+                            <div class="col-md-6 col-md-offset-4">
+                                <button type="submit" class="btn btn-primary">
+                                    Save
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
